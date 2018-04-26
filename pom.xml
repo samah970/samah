@@ -6,11 +6,9 @@
 
     <groupId>com.samahm</groupId>
 
-<<<<<<< HEAD
-=======
-    <groupId>com.samah</groupId>
 
->>>>>>> 0d6d3764ed105654bfba32ffe9772691d895e601
+
+
     <artifactId>guestbook</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -23,12 +21,10 @@
         <artifactId>spring-boot-starter-parent</artifactId>
 
         <version>1.5.12.RELEASE</version>
-<<<<<<< HEAD
-=======
 
-        <version>2.1.0.BUILD-SNAPSHOT</version>
 
->>>>>>> 0d6d3764ed105654bfba32ffe9772691d895e601
+
+
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -52,11 +48,11 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>1.5.4.RELEASE</version>
         </dependency>
-<<<<<<< HEAD
+
         <!--dependency>
-=======
+
         <dependency>
->>>>>>> 0d6d3764ed105654bfba32ffe9772691d895e601
+
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
@@ -93,8 +89,6 @@
             </plugin>
         </plugins>
     </build>
-<<<<<<< HEAD
+
 </project>
-=======
-</project>
->>>>>>> 0d6d3764ed105654bfba32ffe9772691d895e601
+
