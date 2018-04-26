@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.samahm.guestbook.service.GuestBookService;
 
 import java.util.List;
-
+@RequestMapping ("/api")
 @RestController
 public class GuestBookController {
 

@@ -21,19 +21,20 @@ public class GuestBookService {
     public GuestBookEntry findGuestBookEntryById (Integer id) {
         return this.guestBookEntryRepository.findGuestBookEntryById (id);
     }
-    public void deleteGuestBookEntryById (Integer id) {
-        this.guestBookEntryRepository.delete (id);
-    }
+
 
     public List <GuestBookEntry> findGuestBookEntryByUser (String user) {
         return this.guestBookEntryRepository.findGuestBookEntryByUser (user);
     }
-
-
+    public void deleteGuestBookEntryById (Integer id) {
+        this.guestBookEntryRepository.delete (id);
+    }
 
     public void save (GuestBookEntry newEntry) {
         this.guestBookEntryRepository.save (newEntry);
     }
 
-
+    public GuestBookEntry findOne (Integer id) {
+        return this.guestBookEntryRepository.findOne (id);
+    }
 }

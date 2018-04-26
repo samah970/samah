@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title> Web guestbook</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+
+<img th:src="@{/IMG/map.png}" />
+
+<h1> Countries and their capitals</h1>
+
+
+<div th:if="${entries.isEmpty()}">
+    <p>Please enter a comment</p>
+</div>
+
+<div th:if="${!entries.isEmpty()}">
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Capital City</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <tr th:each="entry: ${entries}">
+            <td th:text="${entry.user}"></td>
+            <td th:text="${entry.comment}"></td>
+            <td><a th:href="@{'/delete/' + ${entry.id}}">Delete</a></td>
+            <td><a th:href="@{'/update/' + ${entry.id}}">Update</a></td>
+        </tr>
+    </table>
+</div>
+
+<h2 th:text="${formHeader}"></h2>
+<form th:object="${newEntry}" method="post">
+    <label>Name: </label>
+    <input type="text" size="40" th:field="*{user}" />
+    <label>comment: </label>
+    <input type="text" size="70" th:field="*{comment}" />
+    <input type="submit" value="Submit" />
+    <p class="warning" th:if="${#fields.hasErrors('user')}"> Country should not be empty.</p>
+    <p class="warning" th:if="${#fields.hasErrors('comment')}"> Capital City cannot be empty.</p>
+    <input type="reset" value="Reset" />
+</form>
+
+
+
+</body>
+</html>

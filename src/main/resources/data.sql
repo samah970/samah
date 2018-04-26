@@ -1,6 +1,6 @@
 -- noinspection SqlNoDataSourceInspectionForFile
-INSERT INTO entries (COMMENT, USER) VALUES ('Great Comment', 'john');
-INSERT INTO entries (COMMENT, USER) VALUES ('Me Too!', 'jane');
-INSERT INTO entries (COMMENT, USER) VALUES ('I agree.', 'alice');
-INSERT INTO entries (COMMENT, USER) VALUES ('Thanks for the add.', 'john');
-INSERT INTO entries (COMMENT, USER) VALUES ('yaas.', 'samah');
+INSERT INTO entries (COMMENT, USER) VALUES ('London', 'United Kingdom');
+INSERT INTO entries (COMMENT, USER) VALUES ('Manama', 'Bahrain');
+INSERT INTO entries (COMMENT, USER) VALUES ('Riyadh', 'Saudi Arabia');
+INSERT INTO entries (COMMENT, USER) VALUES ('Paris', 'France');
+INSERT INTO entries (COMMENT, USER) VALUES ('Moscow', 'Russia');
