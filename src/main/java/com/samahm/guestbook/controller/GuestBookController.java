@@ -7,21 +7,22 @@ import com.samahm.guestbook.service.GuestBookService;
 
 import java.util.List;
 
+
 @RestController
 public class GuestBookController {
+
 
     @Autowired
     private GuestBookService guestBookService;
 
     @GetMapping("/comments")
-    public List<GuestBookEntry> getAllComments () {
-        return guestBookService.findAllEntries ();
+    public List <GuestBookEntry> testMapping() {
+        return guestBookService.findAllEntries();
     }
     @GetMapping ("/comment/{id}")
     public GuestBookEntry findGuestBookEntryById (@PathVariable("id") Integer id) {
         return this.guestBookService.findGuestBookEntryById (id);
     }
-
     @DeleteMapping("/comment/{id}")
     public void deleteGuestBookEntryById (@PathVariable ("id") Integer id) {
         this.guestBookService.deleteGuestBookEntryById (id);
@@ -31,15 +32,13 @@ public class GuestBookController {
     public List <GuestBookEntry> findGuestBookEntryByUser (@PathVariable ("user") String user) {
         return this.guestBookService.findGuestBookEntryByUser (user);
     }
-
-
     @PostMapping("/add")
     public void addComment (@RequestBody GuestBookEntry guestBookEntry) {
         this.guestBookService.save (guestBookEntry);
     }
+
     @PostMapping ("/update")
     public void updateComment (@RequestBody GuestBookEntry guestBookEntry) {
         this.guestBookService.save (guestBookEntry);
     }
-
 }
