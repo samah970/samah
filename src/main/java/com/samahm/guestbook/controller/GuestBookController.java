@@ -13,10 +13,11 @@ public class GuestBookController {
     @Autowired
     private GuestBookService guestBookService;
 
-    @GetMapping("/comments")
-    public List<GuestBookEntry> getAllComments () {
+    @GetMapping ("/comments")
+    public List <GuestBookEntry> getAllComments () {
         return guestBookService.findAllEntries ();
     }
+
     @GetMapping ("/comment/{id}")
     public GuestBookEntry findGuestBookEntryById (@PathVariable("id") Integer id) {
         return this.guestBookService.findGuestBookEntryById (id);
@@ -32,11 +33,11 @@ public class GuestBookController {
         return this.guestBookService.findGuestBookEntryByUser (user);
     }
 
-
-    @PostMapping("/add")
+    @PostMapping ("/add")
     public void addComment (@RequestBody GuestBookEntry guestBookEntry) {
         this.guestBookService.save (guestBookEntry);
     }
+
     @PostMapping ("/update")
     public void updateComment (@RequestBody GuestBookEntry guestBookEntry) {
         this.guestBookService.save (guestBookEntry);
