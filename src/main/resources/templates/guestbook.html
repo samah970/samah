@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<img th:src="@{/IMG/map.png}" />
+<img th:src="@{/IMG/c.png}" />
 
-<h1> Countries and their capitals</h1>
+<h1> User and comments</h1>
 
 
 <div th:if="${entries.isEmpty()}">
@@ -19,8 +19,8 @@
 <div th:if="${!entries.isEmpty()}">
     <table>
         <tr>
-            <th>Country</th>
-            <th>Capital City</th>
+            <th>User</th>
+            <th>Comments</th>
             <th>Delete</th>
             <th>Update</th>
         </tr>
@@ -40,8 +40,8 @@
     <label>comment: </label>
     <input type="text" size="70" th:field="*{comment}" />
     <input type="submit" value="Submit" />
-    <p class="warning" th:if="${#fields.hasErrors('user')}"> Country should not be empty.</p>
-    <p class="warning" th:if="${#fields.hasErrors('comment')}"> Capital City cannot be empty.</p>
+    <p class="warning" th:if="${#fields.hasErrors('user')}"> User should not be empty.</p>
+    <p class="warning" th:if="${#fields.hasErrors('comment')}"> Comment cannot be empty.</p>
     <input type="reset" value="Reset" />
 </form>
 

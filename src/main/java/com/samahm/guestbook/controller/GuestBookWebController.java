@@ -26,7 +26,7 @@ public class GuestBookWebController {
 
     @GetMapping("/")
     public String displayGuestBook(Model model) {
-        model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Add a new Country");
+        model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Please add a new user");
         model.addAttribute(ENTRIES_TEMPLATE_ID, this.guestBookService.findAllEntries());
         model.addAttribute(NEW_ENTRY_TEMPLATE_ID, new GuestBookEntry());
         return GUESTBOOK_TEMPLATE;
@@ -44,7 +44,7 @@ public class GuestBookWebController {
             this.guestBookService.save(newEntry);
             return HOMEPAGE_REDIRECT;
         } else {
-            model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Please enter a Capital City for a Country");
+            model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Please enter a comments");
             model.addAttribute(ENTRIES_TEMPLATE_ID, this.guestBookService.findAllEntries());
             return GUESTBOOK_TEMPLATE;
         }
@@ -53,7 +53,7 @@ public class GuestBookWebController {
     @GetMapping ("update/{id}")
     public String editComment (Model model, @PathVariable Integer id) {
         model.addAttribute (ENTRIES_TEMPLATE_ID, this.guestBookService.findAllEntries ());
-        model.addAttribute (GUESTBOOK_FORM_HEADER_ID, "Please correct the Country name");
+        model.addAttribute (GUESTBOOK_FORM_HEADER_ID, "Please correct the user name");
         model.addAttribute (NEW_ENTRY_TEMPLATE_ID, this.guestBookService.findOne (id));
         return GUESTBOOK_TEMPLATE;
     }
@@ -67,7 +67,7 @@ public class GuestBookWebController {
             this.guestBookService.save(current);
             return HOMEPAGE_REDIRECT;
         } else {
-            model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Please correct the Capital City and Country name");
+            model.addAttribute(GUESTBOOK_FORM_HEADER_ID, "Please correct the comment");
             model.addAttribute(ENTRIES_TEMPLATE_ID, this.guestBookService.findAllEntries());
             return GUESTBOOK_TEMPLATE;
         }
